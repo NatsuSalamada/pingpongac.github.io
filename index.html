@@ -31,7 +31,13 @@ https://github.com/sno/unity-webgl-responsive
       </div>
     </div>
     <script src="Build/pingpong.loader.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
+      const telegram = window.Telegram.WebApp;
+      if(telegram){
+        telegram.ready();
+        telegram.expand();
+      }
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/pingpong.data.unityweb",
         frameworkUrl: "Build/pingpong.framework.js.unityweb",
